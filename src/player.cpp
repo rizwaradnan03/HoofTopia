@@ -1,5 +1,7 @@
 #include "main/player.hpp"
 #include "main/projectile.hpp"
+#include "core/image.hpp"
+
 #include <iostream>
 using namespace std;
 
@@ -34,8 +36,10 @@ void Player::Move(SDL_Event event)
 }
 
 void Player::Render(SDL_Renderer *ren){
-    SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
-    SDL_RenderFillRect(ren, &rect);
+    texture = LoadTexture(ren, "../assets/sprites/hat-cowboy.png");
+    SDL_RenderCopy(ren, texture, nullptr, &rect);
+    // SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
+    // SDL_RenderFillRect(ren, &rect);
 }
 
 void Player::Action(SDL_Event event, SDL_Renderer *ren){

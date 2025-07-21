@@ -6,6 +6,7 @@ using namespace std;
 class Player {
     private:
         int velocity = 2;
+        SDL_Texture *texture;
         string last_direction;
         SDL_Rect rect;
         
@@ -14,7 +15,7 @@ class Player {
         void ChangeVelocity(int vel);
         void Move(SDL_Event event);
         void Render(SDL_Renderer *ren);
-        void Action(SDL_Event event);
+        void Action(SDL_Event event, SDL_Renderer *ren);
 };
 
 #endif

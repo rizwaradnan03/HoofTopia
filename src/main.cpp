@@ -21,7 +21,7 @@ Game::Run(){
             }
             
             player.Move(event);
-            player.Action(event);
+            player.Action(event, renderer);
         }
 
         SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);

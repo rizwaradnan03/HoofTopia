@@ -7,6 +7,8 @@ SDL_SetRenderDrawColor(render, 0, 255, 0, 255); = set render warna hijau dengan 
 SDL_RenderClear(renderer); = menghapus tampilan pada alamat render
 SDL_RenderPresent(renderer); = melakukan render terhadap keseluruhan yang sudah disepakati
 SDL_RenderFillRect(renderer, rect) = menyatakan ukuran terhadap sebuah bentuk objek
+SDL_Surface() = menampung gambar di ram lalu akan diproses oleh SDL_Texture
+SDL_Texture() = menyimpan gambar siap jadi pada alamat memori
 
 <!-- DESTROYER -->
 SDL_DestroyRenderer(renderer); = menghapus alamat render beserta isinya
