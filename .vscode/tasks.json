@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run SDL2 Game",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-Iinclude",
+        "-Llib",
+        "./src/main.cpp",
+        "-lmingw32",
+        "-lSDL2main",
+        "-lSDL2",
+        "-mwindows",
+        "-o",
+        "main.exe",
+        "&&",
+        "copy",
+        ".\\bin\\SDL2.dll",
+        ".\\",
+        "&&",
+        ".\\main.exe"
+      ],
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/c"]
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
