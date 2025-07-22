@@ -6,17 +6,17 @@
 
 using namespace std;
 
-SDL_Texture *LoadTexture(SDL_Renderer *ren, string path){
-    SDL_Surface *loadedImage = IMG_Load(path.c_str());
+// SDL_Texture *LoadTexture(SDL_Renderer *ren, string path){
+//     SDL_Surface *loadedImage = IMG_Load(path.c_str());
 
-    if(loadedImage == nullptr){
-        cout << "IMG LOAD ERROR" << endl;
-        return nullptr;
-    }
+//     if(loadedImage == nullptr){
+//         cout << "IMG LOAD ERROR" << endl;
+//         return nullptr;
+//     }
 
-    SDL_Texture *texture = SDL_CreateTextureFromSurface(ren, loadedImage);
-    SDL_FreeSurface(loadedImage);
-    return texture;
-}
+//     SDL_Texture *texture = SDL_CreateTextureFromSurface(ren, loadedImage);
+//     SDL_FreeSurface(loadedImage);
+//     return texture;
+// }
 
 #endif

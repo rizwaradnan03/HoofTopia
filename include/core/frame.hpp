@@ -3,6 +3,7 @@
 #ifndef frame_hpp
     class Frame {
         public:
-            void Render(SDL_Renderer *ren);
-    }
+            virtual void Run(SDL_Renderer *ren);
+            virtual void Render(SDL_Renderer *ren);
+    };
 #endif

@@ -36,13 +36,13 @@ void Player::Move(SDL_Event event)
 }
 
 void Player::Render(SDL_Renderer *ren){
-    texture = LoadTexture(ren, "../assets/sprites/hat-cowboy.png");
-    SDL_RenderCopy(ren, texture, nullptr, &rect);
-    // SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
-    // SDL_RenderFillRect(ren, &rect);
+    SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
+    SDL_RenderFillRect(ren, &rect);
+    // texture = LoadTexture(ren, "../assets/sprites/hat-cowboy.png");
+    // SDL_RenderCopy(ren, texture, nullptr, &rect);
 }
 
-void Player::Action(SDL_Event event, SDL_Renderer *ren){
+void Player::Action(SDL_Renderer *ren, SDL_Event event){
     int type = event.key.keysym.sym;
 
     if(type == 32){
@@ -50,4 +50,10 @@ void Player::Action(SDL_Event event, SDL_Renderer *ren){
             Projectile projectile(ren, last_direction, rect.x, rect.y, 5, 5);
         }
     }
+}
+
+void Player::Run(SDL_Renderer *ren){
+    Player::Render(ren);
+    
+    CharacterBody::Run(ren);
 }

@@ -18,18 +18,19 @@ Game::Run(){
         while(SDL_PollEvent(&event)){
             if(event.type == SDL_QUIT){
                 running = false;
-            }
+            }            
             
             player.Move(event);
-            player.Action(event, renderer);
         }
-
+        
         SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderClear(renderer);
 
-        player.Render(renderer);
+        //RUN EVERY OBJECT CLASS
+        player.Run(renderer);
 
         SDL_RenderPresent(renderer);
+        
     }
 
     SDL_DestroyRenderer(renderer);

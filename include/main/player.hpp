@@ -1,21 +1,23 @@
+#ifndef player_hpp
 #include "SDL2/SDL.h"
+#include "core/nodes/character_body.hpp"
 #include <string>
 using namespace std;
 
-#ifndef player_hpp
-class Player {
+class Player: public CharacterBody {
     private:
         int velocity = 2;
         SDL_Texture *texture;
         string last_direction;
-        SDL_Rect rect;
         
     public:
         Player(int x, int y, int w, int h);
         void ChangeVelocity(int vel);
-        void Move(SDL_Event event);
-        void Render(SDL_Renderer *ren);
-        void Action(SDL_Event event, SDL_Renderer *ren);
+        void Move(SDL_Event event) override;
+        void Action( SDL_Renderer *ren, SDL_Event event);
+
+        void Run(SDL_Renderer *ren) override;
+        void Render(SDL_Renderer *ren) override;
 };
 
 #endif
