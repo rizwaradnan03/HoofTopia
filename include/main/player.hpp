@@ -18,6 +18,11 @@ class Player: public CharacterBody {
 
         void Run(SDL_Renderer *ren) override;
         void Render(SDL_Renderer *ren) override;
+
+        void SetX(int newVal) override;
+        void SetY(int newVal) override;
+        void SetW(int newVal) override;
+        void SetH(int newVal) override;
 };
 
 #endif

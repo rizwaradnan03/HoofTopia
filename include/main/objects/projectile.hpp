@@ -1,4 +1,6 @@
 #ifndef projectile_hpp
+#define projectile_hpp
+
 #include "SDL2/SDL.h"
 #include "string"
 

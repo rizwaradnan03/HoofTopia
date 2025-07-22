@@ -1,6 +1,7 @@
-#include "SDL2/SDL.h"
-
 #ifndef frame_hpp
+#define frame_hpp
+
+#include "SDL2/SDL.h"
     class Frame {
         public:
             virtual void Run(SDL_Renderer *ren);
