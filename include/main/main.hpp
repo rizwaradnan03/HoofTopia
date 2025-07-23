@@ -9,8 +9,9 @@ class Game {
         SDL_Window *window;
         SDL_Renderer *renderer;
         bool running = true;
+
     public:
-        Run();
+        void Run();
         Game();
 };
 

@@ -5,7 +5,7 @@ Block::Block(int x, int y, int w, int h){
 }
 
 void Block::Render(SDL_Renderer *ren){
-    SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(ren, 69, 231, 60, 0.8);
     SDL_RenderFillRect(ren, &rect);
 }
 

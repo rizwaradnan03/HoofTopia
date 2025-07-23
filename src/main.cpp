@@ -13,16 +13,13 @@ Game::Game(){
     renderer = SDL_CreateRenderer(window, -1, 0);
 }
 
-//start y = 780 end y = 30
-//max x = 1320
 vector<Block> RenderWorldBlock(){
     int x = 0, y = 780;
     vector<Block> result;
 
-    while(y > 150){
+    while(y > 330){
         while(x <= 1320){
             Block block(x, y, 30, 30);
-
             result.push_back(block);
             x = x + 30;
         }
@@ -30,16 +27,12 @@ vector<Block> RenderWorldBlock(){
         x = 0;
         y = y - 30;
     }
-
     return result;
 }
 
 Game::Run(){
-    vector<Block> existing_block = RenderWorldBlock();
-
     SDL_Event event;
-
-    // Player player(0, 780, 30, 30);
+    vector<Block> existing_block = RenderWorldBlock();
     Player player(700, 500, 30, 30);
 
     while(running == true){
@@ -47,20 +40,17 @@ Game::Run(){
             if(event.type == SDL_QUIT){
                 running = false;
             }            
-            
             player.Move(event);
         }
         
-        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        SDL_SetRenderDrawColor(renderer, 39, 204, 245, 0.8);
         SDL_RenderClear(renderer);
 
         for(int i = 0;i < existing_block.size();i++){
             existing_block[i].Run(renderer);
         }
 
-        //RUN EVERY OBJECT CLASS
         player.Run(renderer);
-
         SDL_RenderPresent(renderer);
     }
 
